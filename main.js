@@ -69,6 +69,143 @@ const ANSWERS = [
   { label: '매우 그렇지 않다', value: -2 }
 ];
 
+const TYPE_INFO = {
+  ISTJ: {
+    title: '차분한 설계자',
+    summary: '현실적인 기준과 책임감을 바탕으로 일을 정리하고 안정적인 흐름을 만든다.',
+    strengths: ['체계적인 실행', '신뢰 기반의 약속 준수', '세부 사항 점검'],
+    tips: '큰 그림의 변화에도 여유를 두고 적응할 시간을 확보해 보자.'
+  },
+  ISFJ: {
+    title: '세심한 조율자',
+    summary: '사람과 환경을 살피며 조용히 분위기를 안정시키는 데 강점이 있다.',
+    strengths: ['세심한 배려', '안정적인 지원', '꾸준한 유지력'],
+    tips: '내가 원하는 기준을 명확히 말해도 관계는 더 좋아질 수 있다.'
+  },
+  INFJ: {
+    title: '조용한 안내자',
+    summary: '의미 있는 방향과 사람의 성장에 관심을 두며 깊이 있게 연결된다.',
+    strengths: ['통찰력 있는 관점', '깊은 공감', '목표 지향적 몰입'],
+    tips: '혼자만의 재정비 시간을 주기적으로 확보하자.'
+  },
+  INTJ: {
+    title: '전략적 설계자',
+    summary: '장기적인 구조를 그리며 효율적인 방법을 찾아내는 데 익숙하다.',
+    strengths: ['전략 수립', '높은 집중력', '문제 해결'],
+    tips: '협업에서는 과정 공유를 조금 더 자주 해보자.'
+  },
+  ISTP: {
+    title: '유연한 해결사',
+    summary: '현장에서 빠르게 판단하고 실용적인 해결책을 찾는다.',
+    strengths: ['즉각적 대응', '현실적 감각', '문제 중심 사고'],
+    tips: '아이디어를 팀과 나누면 실행 속도가 더 빨라진다.'
+  },
+  ISFP: {
+    title: '따뜻한 감각가',
+    summary: '현재의 경험을 중요하게 여기며 조용히 자신의 리듬을 지킨다.',
+    strengths: ['섬세한 감각', '진정성 있는 관계', '유연한 적응'],
+    tips: '필요할 땐 경계를 명확히 설정해도 괜찮다.'
+  },
+  INFP: {
+    title: '가치 중심 탐색가',
+    summary: '의미와 가치에 집중하며 자신만의 기준을 지켜나간다.',
+    strengths: ['진정성', '창의적 관점', '깊은 몰입'],
+    tips: '현실적인 마감과 일정도 같이 챙기면 균형이 좋아진다.'
+  },
+  INTP: {
+    title: '분석적 실험가',
+    summary: '아이디어를 깊게 파고들며 논리적인 구조를 탐구한다.',
+    strengths: ['논리적 탐구', '개념 정리', '새로운 해석'],
+    tips: '중간 공유를 하면 협업 만족도가 높아진다.'
+  },
+  ESTP: {
+    title: '활력 있는 추진가',
+    summary: '현장에서 빠른 판단과 실행으로 흐름을 만든다.',
+    strengths: ['즉흥적 실행', '현장 감각', '대담한 결정'],
+    tips: '중요한 결정은 한 번만 더 점검해보자.'
+  },
+  ESFP: {
+    title: '분위기 메이커',
+    summary: '사람들과의 교류 속에서 에너지를 얻고 분위기를 밝게 만든다.',
+    strengths: ['친화력', '즉각적 공감', '현장 적응력'],
+    tips: '나만의 재충전 루틴을 확보하면 더 오래 즐길 수 있다.'
+  },
+  ENFP: {
+    title: '아이디어 촉진자',
+    summary: '새로운 가능성을 발견하고 사람들을 연결하는 데 강점이 있다.',
+    strengths: ['창의적 발상', '관계 확장', '열정적인 추진'],
+    tips: '핵심 우선순위를 정리하면 실행력이 더 높아진다.'
+  },
+  ENTP: {
+    title: '도전적 발명가',
+    summary: '새로운 관점을 제시하며 문제를 색다르게 풀어낸다.',
+    strengths: ['아이디어 확장', '논리적 설득', '유연한 사고'],
+    tips: '실행 일정도 함께 챙기면 성과가 더 커진다.'
+  },
+  ESTJ: {
+    title: '실행 중심 관리자',
+    summary: '기준과 규칙을 바탕으로 조직을 정리하고 목표를 달성한다.',
+    strengths: ['명확한 기준', '빠른 실행', '책임감'],
+    tips: '다른 방식도 시도할 여유를 주면 팀이 더 편안해진다.'
+  },
+  ESFJ: {
+    title: '관계 조율 리더',
+    summary: '사람들의 흐름을 읽고 협력 분위기를 만드는 데 능숙하다.',
+    strengths: ['협업 지원', '분위기 관리', '실행 조율'],
+    tips: '내 기준을 명확히 공유하면 부담이 줄어든다.'
+  },
+  ENFJ: {
+    title: '성장 촉진 리더',
+    summary: '사람들의 가능성을 이끌어내며 방향을 제시한다.',
+    strengths: ['관계 리딩', '동기 부여', '비전 제시'],
+    tips: '모든 사람을 챙기려 하기보다 우선순위를 정하자.'
+  },
+  ENTJ: {
+    title: '목표 지향 전략가',
+    summary: '목표를 명확히 하고 실행 구조를 설계하는 데 강점이 있다.',
+    strengths: ['전략 수립', '결단력', '성과 지향'],
+    tips: '과정의 피드백도 챙기면 협업이 더 매끄럽다.'
+  }
+};
+
+const COMPATIBILITY = {
+  ISTJ: ['ESTJ', 'ISFJ', 'INTJ'],
+  ISFJ: ['ESFJ', 'ISTJ', 'INFJ'],
+  INFJ: ['ENFP', 'INFP', 'ENFJ'],
+  INTJ: ['ENTJ', 'INTP', 'INFJ'],
+  ISTP: ['ESTP', 'INTP', 'ISFP'],
+  ISFP: ['ESFP', 'INFP', 'ISTP'],
+  INFP: ['ENFP', 'INFJ', 'ISFP'],
+  INTP: ['ENTP', 'INTJ', 'ISTP'],
+  ESTP: ['ISTP', 'ESFP', 'ENTP'],
+  ESFP: ['ISFP', 'ESTP', 'ESFJ'],
+  ENFP: ['INFJ', 'ENFJ', 'INFP'],
+  ENTP: ['INTP', 'ENTJ', 'ESTP'],
+  ESTJ: ['ISTJ', 'ESFJ', 'ENTJ'],
+  ESFJ: ['ISFJ', 'ESTJ', 'ENFJ'],
+  ENFJ: ['INFJ', 'ENFP', 'ESFJ'],
+  ENTJ: ['INTJ', 'ENTP', 'ESTJ']
+};
+
+const CAREERS = {
+  ISTJ: ['운영 관리', '품질 관리', '회계/재무'],
+  ISFJ: ['교육 지원', '헬스케어 코디네이션', '운영 지원'],
+  INFJ: ['교육/코칭', '콘텐츠 기획', '상담 지원'],
+  INTJ: ['전략 기획', '데이터 분석', '제품 기획'],
+  ISTP: ['개발/엔지니어링', '문제 해결 직무', '현장 운영'],
+  ISFP: ['디자인', '브랜딩', '콘텐츠 제작'],
+  INFP: ['콘텐츠/에디팅', 'UX 라이팅', '기획'],
+  INTP: ['리서치', '데이터/AI', '프로토타이핑'],
+  ESTP: ['세일즈', '프로젝트 실행', '이벤트 운영'],
+  ESFP: ['마케팅', '커뮤니티 운영', '서비스 매니저'],
+  ENFP: ['브랜드/캠페인', '콘텐츠 전략', '신사업 발굴'],
+  ENTP: ['전략 컨설팅', '신제품 기획', '벤처/스타트업'],
+  ESTJ: ['프로젝트 관리', '운영 리더십', '조직 관리'],
+  ESFJ: ['HR/조직문화', '고객 성공', '교육 운영'],
+  ENFJ: ['리더십/교육', 'HR', '공공/커뮤니티'],
+  ENTJ: ['경영/전략', '사업 개발', '리더십 역할']
+};
+
 const PAGE_SIZE = 10;
 const TOTAL_PAGES = Math.ceil(QUESTIONS.length / PAGE_SIZE);
 
@@ -213,32 +350,70 @@ function determineType(scores) {
 
 function renderResult(scores) {
   const { type, breakdown } = determineType(scores);
+  const info = TYPE_INFO[type] || {
+    title: '나의 유형',
+    summary: '현재 응답을 기반으로 유형 경향을 정리했어요.',
+    strengths: [],
+    tips: ''
+  };
+  const matches = COMPATIBILITY[type] || [];
+  const careers = CAREERS[type] || [];
 
-  const strengthCopy = breakdown
-    .map((item) => `${item.left}/${item.right} ${item.letter} ${item.strength}%`)
-    .join(' · ');
-
-  resultBox.innerHTML = `
-    <div>
-      <p class="tag">나의 결과</p>
-      <h3>${type}</h3>
-      <p>${strengthCopy}</p>
-      <p>각 축의 점수는 질문에 대한 선호 경향을 보여주며, 결과는 참고용입니다.</p>
-    </div>
-    <div class="score-grid">
-      ${breakdown
-        .map(
-          (item) => `
-        <div class="score-card">
-          <div class="label">${item.label}</div>
-          <div>${item.left} ${item.leftScore}점 · ${item.right} ${item.rightScore}점</div>
+  const axisCards = breakdown
+    .map((item) => {
+      const leftPercent = Math.round(50 + ((item.leftScore - item.rightScore) / 30) * 50);
+      const rightPercent = 100 - leftPercent;
+      const fillPercent = item.letter === item.left ? leftPercent : rightPercent;
+      return `
+        <div class="axis-card">
+          <div class="axis-label">${item.label}</div>
+          <div class="axis-values">
+            <span>${item.left} ${leftPercent}%</span>
+            <span>${item.right} ${rightPercent}%</span>
+          </div>
           <div class="score-bar">
-            <div class="score-fill" style="width: ${item.strength}%"></div>
+            <div class="score-fill" style="width: ${fillPercent}%"></div>
           </div>
         </div>
-      `
-        )
-        .join('')}
+      `;
+    })
+    .join('');
+
+  resultBox.innerHTML = `
+    <div class="result-hero">
+      <div>
+        <p class="tag">나의 유형</p>
+        <h3>${type}</h3>
+        <p class="result-title">${info.title}</p>
+        <p class="result-summary">${info.summary}</p>
+        <div class="chip-row">
+          ${info.strengths.map((item) => `<span class="chip">${item}</span>`).join('')}
+        </div>
+      </div>
+      <div class="result-highlight">
+        <div class="highlight-label">성향 요약</div>
+        <div class="highlight-body">${info.tips}</div>
+      </div>
+    </div>
+    <div class="axis-grid">${axisCards}</div>
+    <div class="result-grid">
+      <div class="result-panel">
+        <h4>잘 맞는 유형</h4>
+        <p class="panel-sub">협업이나 대화에서 부드럽게 맞춰질 가능성이 높은 유형입니다.</p>
+        <div class="chip-row">${matches.map((item) => `<span class="chip">${item}</span>`).join('')}</div>
+      </div>
+      <div class="result-panel">
+        <h4>추천 역할/직업</h4>
+        <p class="panel-sub">현재 성향에서 강점이 잘 드러날 수 있는 분야입니다.</p>
+        <ul class="panel-list">
+          ${careers.map((item) => `<li>${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="result-panel">
+        <h4>해석 안내</h4>
+        <p class="panel-sub">결과는 참고용이며, 다양한 경험과 상황에 따라 달라질 수 있습니다.</p>
+        <p class="panel-note">응답 흐름을 기반으로 현재의 선호 경향을 퍼센티지로 표시했습니다.</p>
+      </div>
     </div>
   `;
 

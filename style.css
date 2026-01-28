@@ -450,6 +450,123 @@ h1 {
   font-size: 26px;
 }
 
+.result-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  align-items: center;
+}
+
+.result-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.result-summary {
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 8px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.result-highlight {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.highlight-label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.highlight-body {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.axis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.axis-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 14px;
+}
+
+.axis-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.axis-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.result-panel {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.result-panel h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.panel-sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.panel-list {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.panel-list li::before {
+  content: '•';
+  margin-right: 6px;
+  color: var(--accent);
+}
+
+.panel-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .score-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
